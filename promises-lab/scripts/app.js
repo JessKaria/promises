@@ -1,60 +1,20 @@
 // ! 🤝 PROMISES LAB 🤞 //
-
+// https://api.punkapi.com/v2/beers
 
 // ! CRAFTIEST BEER
-const displayBeers = document.querySelector('.beers')
-console.log(displayBeers)
+//fetch all the beers and then display them all on the page
 
-// fetch('https://api.punkapi.com/v2/beers')
-//   .then(resp => resp.json())
-//   .then(beer => {
-//     displayBeers.innerHTML = beer.map(beer => {
-//       console.log(displayBeers)
-//       return `
-//         <h1>${beer.name}</h1>
-//         <h3>${beer.tagline}</h3>
-//         <strong>${beer.first_brewed}</strong>
-//         <p>${beer.description}</p><br>
-//         <img src="${beer.image_url}" height="600"">
-//         `
-//     }).join('')
-//   })
+//POKEMONS
 
-fetch('https://api.punkapi.com/v2/beers')
-  .then(resp => resp.json())
-  .then(beer => {
-    displayBeers.innerHTML = beer.map(beer => {
-      console.log(displayBeers)
-      return `
-        <h1>${beer.name}</h1>
-        <h3>${beer.tagline}</h3>
-        <strong>${beer.first_brewed}</strong>
-        <p>${beer.description}</p><br>
-        <img src="${beer.image_url}" height="600"">
-        `
-    }).join('')
-  })
+/* Using the pokemon API (https://pokeapi.co/), display a pokemon's image on a page 
+(note, there are lots of different images available here, and you can pick whichever you like). This should work for 
+any pokemon, so in other words if you make a request for pikachu, your code should still work if you edit the string 
+in your URL, to make a request for squirtle.*/
 
 
-
-
-
-
-// const displayOffice = document.querySelector('.office')
-// console.log(displayOffice)
-
-// fetch('https://officeapi.dev/api/quotes')
-//   .then(resp => resp.json())
-//   .then(office => {
-//     displayOffice.innerHTML = office.map(office => {
-//       return `<li>
-//         Name: ${office.name} -
-//         Tagline: ${office.tagline}
-//         First Brewed: ${office.first_brewed}
-//       </li>`
-//     }).join('')
-//   })
-
+/* Using the Punk API beers endpoint https://api.punkapi.com/v2/beers, display the name and description of each beer on your page.
+Extend your beers list from question 2 to include cards with images, descriptions of food pairings, and any other information 
+you'd like for each beer. Bonus: Add a way of filtering the beers your show, by their name, as you type. */
 
 
 

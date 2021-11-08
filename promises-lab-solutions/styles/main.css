@@ -1,9 +1,0 @@
-#beers {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.beer {
-  flex: 1;
-  width: 1000px;
-}

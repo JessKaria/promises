@@ -1,5 +1,11 @@
 // * 🤝 PROMISES 🤞 * //
 
+/*
+A promise is an object that may produce a single value some time in the future: either a resolved value, 
+or a reason that it’s not resolved (e.g., a network error occurred). A promise may be in one of 3 possible states: 
+fulfilled, rejected, or pending. Promise users can attach callbacks to handle the fulfilled value or the reason for rejection.
+*/
+
 const displayDonut = document.querySelector('#donut')
 
 // ? fetch is a built in function, for fetching information from servers.
@@ -16,7 +22,7 @@ donutPromise
   // ? you then call .json on it, to give you another promise.
   .then((resp) => resp.json())
   .then((data) => {
-    // ! You don't have until you're in here
+    // ! You don't have the data until you're in here
     console.log(data)
     displayDonut.innerHTML = `<div>
       Style: ${data.style} -
@@ -54,30 +60,3 @@ fetch('https://ga-doughnuts.herokuapp.com/doughnuts')
       </li>`
     }).join('')
   })
-
-
-// ! Example with render function and global variables
-// ? This example can be really useful for when I want to separate
-// ? out fetching from rendering
-let donuts = [{ style: 'nicks donut', 'flavour': 'sweet' }]
-// ? notice I can render nicks donut before fetching. I can call this
-// ? whenever I need to.
-
-fetch('https://ga-doughnuts.herokuapp.com/doughnuts')
-  // ! always include this when using fetch
-  .then(resp => resp.json())
-  // ! In here we have the actual data
-  .then(data => {
-    donuts = data
-    render()
-  })
-
-// ? Render what's currently in donuts onto the page
-function render() {
-  displayDonuts.innerHTML = donuts.map(donut => {
-    return `<li>
-      Style: ${donut.style} -
-      Flavour: ${donut.flavour}
-    </li>`
-  }).join('')
-}
